@@ -66,19 +66,20 @@ watch(modal.confirm, (confirm) => {
                         </td>
                         <td class="p-3 text-left">
                             <p>Passe : {{ event?.passes_count }}</p>
-                            <p class="text-gray-400">Ticket : {{ event?.passes.reduce((acc, passe) => acc +
-                                passe.available_quantity, 0) }}</p>
+                            <p class="text-gray-400">Ticket : {{ event?.passes.reduce((acc, passe) => acc + passe.available_quantity, 0) }}</p>
                         </td>
                         <td class="flex flex-col md:flex-row justify-around p-2 space-y-1 md:space-x-1 items-center">
                             <Link :href="route('event.show', event.id)" class="p-2 rounded duration-300 hover:bg-slate-400">
-                            <i class="fi-sr-eye text-sm text-primary"></i></Link>
-                            <Link :href="route('event.edit', event.id)" as="button"
-                                class="p-2 rounded duration-300 hover:bg-slate-400"><i
-                                class="fi-sr-edit text-sm text-secondary"></i></Link>
+                                <i class="fi-sr-eye text-sm text-primary"></i>
+                            </Link>
+                            <Link :href="route('event.edit', event.id)" as="button" class="p-2 rounded duration-300 hover:bg-slate-400">
+                                <i class="fi-sr-edit text-sm text-secondary"></i>
+                            </Link>
                             <span
                                 @click="modal.toggleModal(true, 'Supprimer', null, `Voulez-vous supprimer l\'evenement ${event?.title} ?`)"
                                 class="p-2 rounded duration-300 hover:bg-slate-400">
-                                <i class="fi-sr-trash text-sm text-red-500"></i></span>
+                                <i class="fi-sr-trash text-sm text-red-500"></i>
+                            </span>
                         </td>
                     </tr>
                 </tbody>
